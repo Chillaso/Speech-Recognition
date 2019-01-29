@@ -26,6 +26,7 @@
 			</plugin>
 		</plugins>
 	</build>
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -34,12 +35,32 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<!-- PLAY SOUNDS -->
+		<dependency>
+		    <groupId>javazoom</groupId>
+		    <artifactId>jlayer</artifactId>
+		    <version>1.0.1</version>
+		</dependency>
+		
+		<!-- GOOGLE -->		
 		<dependency>
 		  <groupId>com.google.cloud</groupId>
 		  <artifactId>google-cloud-speech</artifactId>
 		  <version>0.70.0-beta</version>
 		</dependency>
+		<dependency>
+		  <groupId>com.google.cloud</groupId>
+		  <artifactId>google-cloud-texttospeech</artifactId>
+		  <version>0.70.0-beta</version>
+		</dependency>
+		<dependency>
+		  <groupId>net.sourceforge.argparse4j</groupId>
+		  <artifactId>argparse4j</artifactId>
+		  <version>0.8.1</version>
+		</dependency>
+	
 	</dependencies>
+	
 	<profiles>
 	    <profile>
 	      <id>StartStream</id>

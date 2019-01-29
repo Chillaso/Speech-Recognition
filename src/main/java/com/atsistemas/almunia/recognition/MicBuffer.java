@@ -18,14 +18,21 @@ public class MicBuffer implements Runnable
         System.out.println("Start speaking...Press Ctrl-C to stop");
         targetDataLine.start();
         byte[] data = new byte[BYTES_PER_BUFFER];
-        while (targetDataLine.isOpen()) {
-          try {
+        
+        while (targetDataLine.isOpen()) 
+        {
+          try 
+          {
             int numBytesRead = targetDataLine.read(data, 0, data.length);
-            if ((numBytesRead <= 0) && (targetDataLine.isOpen())) {
+            if ((numBytesRead <= 0) && (targetDataLine.isOpen())) 
+            {
               continue;
             }
+          
             sharedQueue.put(data.clone());
-          } catch (InterruptedException e) {
+          } 
+          catch (InterruptedException e) 
+          {
             System.out.println("Microphone input buffering interrupted : " + e.getMessage());
           }
         }
