@@ -3,19 +3,29 @@ package com.atsistemas.almunia.dictionary;
 import com.atsistemas.almunia.utils.Commands;
 
 public class VoiceCommands {
-
-	public static boolean checkResponse(String transcript)
+	
+	public static String[] checkResponse(String transcript)
 	{
 		int cont = 0;
-		if(transcript.toLowerCase().contains("atsistemas"))
+		
+		for(String[] command : Commands.COMMANDS)
 		{
-			for(String s : Commands.OPEN_ALMUNIA)
+			for(String s : command)
 			{
 				if(transcript.toLowerCase().contains(s))
-					cont++;
+					cont++;		
 			}
-			return (cont == Commands.OPEN_ALMUNIA.length) ? true : false;
+			//If command matches 100%
+			if(command.length==cont)
+				return command;
+			//clear cont and continue with command list
+			else
+			{				
+				cont=0;
+				continue;
+			}
 		}
-		return false;
+		
+		return null;
 	}
 }

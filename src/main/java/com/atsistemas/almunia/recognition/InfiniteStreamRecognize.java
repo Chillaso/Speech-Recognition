@@ -9,6 +9,7 @@ import javax.sound.sampled.DataLine.Info;
 import javax.sound.sampled.TargetDataLine;
 
 import com.atsistemas.almunia.dictionary.VoiceCommands;
+import com.atsistemas.almunia.utils.Commands;
 import com.google.api.gax.rpc.ClientStream;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
@@ -30,6 +31,7 @@ public class InfiniteStreamRecognize
 		MicBuffer micrunnable = new MicBuffer();
 		Thread micThread = new Thread(micrunnable);
 		ResponseObserver<StreamingRecognizeResponse> responseObserver = null;
+		Commands com = new Commands();
 
 		//Create the client and the listener.
 		try (SpeechClient client = SpeechClient.create()) 
@@ -50,8 +52,9 @@ public class InfiniteStreamRecognize
 
 					try
 					{
-						if(VoiceCommands.checkResponse(alternative.getTranscript()))
-							TextToSpeech.synthesizeText(alternative.getTranscript());
+						String[] respCom = VoiceCommands.checkResponse(alternative.getTranscript()); 
+						if(respCom != null)
+							TextToSpeech.synthesizeText(com.getMapCommands().get(respCom));
 					}
 					catch(Exception esound)
 					{
