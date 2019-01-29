@@ -1,4 +1,4 @@
-package com.atsistemas.almunia;
+package com.atsistemas.almunia.recognition;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

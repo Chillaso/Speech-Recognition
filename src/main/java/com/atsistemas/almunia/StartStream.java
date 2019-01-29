@@ -1,5 +1,7 @@
 package com.atsistemas.almunia;
 
+import com.atsistemas.almunia.recognition.InfiniteStreamRecognize;
+
 public class StartStream 
 {
 	public static void main(String... args) 
