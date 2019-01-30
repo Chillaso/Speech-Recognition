@@ -17,7 +17,7 @@ mvn clean package
 ```
 After this we need to export our credentials in Google Cloud (See how to create and account and get JSON [here](https://cloud.google.com/docs/authentication/production))
 ```sh
-export GOOGLE_APPLICATION_CREDENTIALS
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/json/file
 ```
 Finally, let's play
 ```sh
