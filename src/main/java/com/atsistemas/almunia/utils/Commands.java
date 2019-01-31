@@ -6,7 +6,7 @@ import java.util.Map;
 public class Commands {
 	
 	public static final String[] CAMELAR= {"google","cómo","aprobar","segundo"};
-	public static final String[] IES_ALMUNIA= {"Miguel", "mejores", "alumnos"};
+	public static final String[] IES_ALMUNIA= {"miguel", "mejores", "alumnos"};
 	public static final String[] YOU_ARE = {"google","puto","amo","quién"};
 	
 	public static final String[][] COMMANDS = {CAMELAR, IES_ALMUNIA, YOU_ARE};
